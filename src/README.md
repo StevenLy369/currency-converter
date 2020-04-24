@@ -13,6 +13,9 @@ Using an exchange rate api, one is able to convert usd into a few other types of
 * Run npm install -> npm run build -> npm run start
 * A popup should appear 
 
+## Spec
+* Input 10 USD into CAD. Output = 14.10 CAD
+* 10 USD into WOW. Output = Please input one of the 5 currencies we support; AUD, CAD, DOP, HKD, SEK
 
 
 ## Known Bugs
