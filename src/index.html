@@ -4,16 +4,21 @@
     <title>TITLE</title>
   </head>
   <body>
-
+    <div class="container">
     <form id="input">
       <label>Please Enter amount in USD</label>
-      <input type="text" id="num-input">
+      <input type="number" id="num-input">
+      <label>Currency you want to convert to</label>
+      <input type="text" id="converting">
       <button id="submit">Submit</button>
     </form>
 
-    <p id="aud"></p>
+    <h1 id="warning">WE ONLY SUPPORT AUD, CAD, DOP, HKD AND SEK AS OF RIGHT NOW</h1>
 
+    <p id="display"></p>
+    <p id="error"></p>
 
+  </div>
 
 
   </body>

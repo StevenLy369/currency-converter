@@ -7,20 +7,52 @@ import $ from "jquery";
 $(document).ready(function () {
   $("#submit").click(function (event) {
     event.preventDefault();
-    const usd = $("#num-input").val();
-    console.log(usd);
-  
+    let usd = $("#num-input").val();
+    let convert = $("#converting").val().toUpperCase();
+    console.log(convert);
+    
+      (async () => {
+        let currencyService = new CurrencyService();
+        const response = await currencyService.getCurrency();
+         console.log(response);
 
-    (async () => {
-      let currencyService = new CurrencyService();
-      const response = await currencyService.getCurrency();
-      getElements(response);
-    })();
-    function getElements(response) {
-      if (response) {
-        $("#aud").text(`$1 = ${response.conversion_rates.AED} AED. Converting ${usd} to AED. You would have ${usd * response.conversion_rates.AED}`);
-        console.log(`${response.conversion_rates.AED}`)
-      }
-    }
+        // if (convert !== "AUD" || "CAD" || "DOP" || "HKD" || "SEK") {
+        //   $("#error").text("Please input one of the 5 currencies we support; AUD, CAD, DOP, HKD, SEK");
+        // } else {
+          getElements(response);
+        //}
+
+
+
+
+        function getElements(response) {
+          if (convert == "CAD") {
+            $("#display").text( `$1 = ${response.conversion_rates.CAD} CAD. Converting ${usd} dollars to CAD. You would have ${parseFloat(usd * response.conversion_rates.CAD.toFixed(2))} CAD`);
+            $("#error").hide();
+            $("#warning").hide();
+          }
+          if (convert == "HKD") {
+            $("#display").text( `$1 = ${response.conversion_rates.HKD} HKD. Converting ${usd} dollars to HKD. You would have ${parseFloat(usd * response.conversion_rates.HKD.toFixed(2))} HKD`);
+            $("#error").hide();
+            $("#warning").hide();
+          }
+          if (convert == "DOP") {
+            $("#display").text( `$1 = ${response.conversion_rates.DOP} DOP. Converting ${usd} dollars to DOP. You would have ${parseFloat(usd * response.conversion_rates.DOP.toFixed(2))} DOP`);
+            $("#error").hide();
+            $("#warning").hide();
+          }
+          if (convert == "SEK") {
+            $("#display").text( `$1 = ${response.conversion_rates.SEK} sek. Converting ${usd} dollars to SEK. You would have ${parseFloat(usd * response.conversion_rates.SEK.toFixed(2))} SEK`);
+            $("#error").hide();
+            $("#warning").hide();
+          }
+          if (convert == "AUD") {
+            $("#display").text( `$1 = ${response.conversion_rates.CAD} AUD. Converting ${usd} dollars to AUD. You would have ${parseFloat(usd * response.conversion_rates.AUD.toFixed(2))} AUD`);
+            $("#error").hide();
+            $("#warning").hide();
+          }
+        }
+      })();
+    
   });
 });
