@@ -1,0 +1,34 @@
+# _Currency Exchanger_
+
+
+#### By _**Steven Ly**_
+
+## Description
+Using an exchange rate api, one is able to convert usd into a few other types of currency.
+
+## Setup/Installation Requirements
+
+* Git Clone
+* Open in text editor of your choice
+* Run npm install -> npm run build -> npm run start
+* A popup should appear 
+
+
+
+## Known Bugs
+No
+
+## Support and contact details
+You can contact me via github
+
+## Technologies Used
+* HTML
+* Javascript
+* Node
+* Css
+
+
+### License
+MIT
+
+Copyright (c) 2016 **_Steven Ly_**
