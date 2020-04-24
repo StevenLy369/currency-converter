@@ -50,6 +50,7 @@ $(document).ready(function () {
 
           }if (response.result == "error"){
               $("#error").text("Something is wrong with api key");
+              $("#warning").hide();
 
           }
           else{
