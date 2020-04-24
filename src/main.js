@@ -16,14 +16,8 @@ $(document).ready(function () {
         const response = await currencyService.getCurrency();
          console.log(response);
 
-        // if (convert !== "AUD" || "CAD" || "DOP" || "HKD" || "SEK") {
-        //   $("#error").text("Please input one of the 5 currencies we support; AUD, CAD, DOP, HKD, SEK");
-        // } else {
+        
           getElements(response);
-        //}
-
-
-
 
         function getElements(response) {
           if (convert == "CAD") {
@@ -50,6 +44,9 @@ $(document).ready(function () {
             $("#display").text( `$1 = ${response.conversion_rates.CAD} AUD. Converting ${usd} dollars to AUD. You would have ${parseFloat(usd * response.conversion_rates.AUD.toFixed(2))} AUD`);
             $("#error").hide();
             $("#warning").hide();
+          }
+          else{
+            $("#error").text("Please input one of the 5 currencies we support; AUD, CAD, DOP, HKD, SEK");
           }
         }
       })();
