@@ -16,7 +16,7 @@ Using an exchange rate api, one is able to convert usd into a few other types of
 
 
 ## Known Bugs
-No
+Maybe
 
 ## Support and contact details
 You can contact me via github
