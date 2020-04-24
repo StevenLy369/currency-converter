@@ -18,7 +18,7 @@ $(document).ready(function () {
     })();
     function getElements(response) {
       if (response) {
-        $(".aud").text(`This is something ${response.conversion_rates.AED} Yes`);
+        $("#aud").text(`$1 = ${response.conversion_rates.AED} AED. Converting ${usd} to AED. You would have ${usd * response.conversion_rates.AED}`);
         console.log(`${response.conversion_rates.AED}`)
       }
     }
