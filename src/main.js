@@ -44,11 +44,11 @@ $(document).ready(function () {
             $("#display").text( `$1 = ${response.conversion_rates.CAD} AUD. Converting ${usd} dollars to AUD. You would have ${parseFloat(usd * response.conversion_rates.AUD.toFixed(2))} AUD`);
             $("#error").hide();
             $("#warning").hide();
-          }if (response.result = undefined){
+          }if (response.result == undefined){
               $("#error").text("Something is wrong with URL");
               $("#warning").hide();
 
-          }if (response.result == "error"){
+          }if (response.result === "error"){
               $("#error").text("Something is wrong with api key");
               $("#warning").hide();
 
